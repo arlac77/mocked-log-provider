@@ -1,0 +1,4 @@
+name = "mocked-log-provider"
+main = "src/index.mjs"
+workers_dev = true
+compatibility_date = "2023-01-15"
