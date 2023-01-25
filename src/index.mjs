@@ -1,3 +1,5 @@
+
+/*
 import { Router } from "itty-router";
 import { error, json, missing } from "itty-router-extras";
 import { createCors } from "itty-cors";
@@ -20,7 +22,11 @@ export default {
       .catch(err => error(500, err.stack))
       .then(corsify)
 };
+*/
 
+addEventListener('fetch', event => {
+  event.respondWith(handleRequest(event.request));
+});
 
 
 /**
