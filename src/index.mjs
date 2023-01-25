@@ -1,4 +1,3 @@
-
 /*
 import { Router } from "itty-router";
 import { error, json, missing } from "itty-router-extras";
@@ -24,19 +23,16 @@ export default {
 };
 */
 
-addEventListener('fetch', event => {
+addEventListener("fetch", event => {
   event.respondWith(handleRequest(event.request));
 });
-
 
 /**
  * Respond to the request
  * @param {Request} request
  */
 async function handleRequest(request) {
-  const params = new URLSearchParams(
-            request.url.replace(/^[^\?]+\?/, "")
-          );
+  const params = new URLSearchParams(request.url.replace(/^[^\?]+\?/, ""));
 
   let line = parseInt(params.get("cursor")) || 0;
   const offset = parseInt(params.get("offset")) || 0;
@@ -45,17 +41,17 @@ async function handleRequest(request) {
   let i = 0;
   const te = new TextEncoder();
 
-  const { readable, writable } = new TransformStream()
+  const { readable, writable } = new TransformStream();
 
-  const writer = writable.getWriter()
+  const writer = writable.getWriter();
 
   let iv = setInterval(() => {
-    writer.write(te.encode(`line ${offset + line++}\n`))
-    if(line > number) {
+    writer.write(te.encode(`line ${offset + line++}\n`));
+    if (line > number) {
       clearInterval(iv);
       writer.close();
     }
-    }, 500);
+  }, 300);
 
-  return new Response(readable, {status: 200})
+  return new Response(readable, { status: 200 });
 }
