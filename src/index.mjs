@@ -7,22 +7,22 @@ import { createCors } from "itty-cors";
 const router = Router();
 
 router
-//  .all("*", preflight) // handle CORS preflight/OPTIONS requests
+  //  .all("*", preflight) // handle CORS preflight/OPTIONS requests
   .get("/version", () => json({ version: "0.1.0" }))
   .get("/", getLog)
   .all("*", () => missing("Are you sure about that?"));
 
-export default function fetch(...args) {
-  return router
-      .handle(...args)
-      .catch(err => error(500, err.stack))
-//      .then(corsify)
-}
+export default {
+  fetch(...args) {
+    return router.handle(...args).catch(err => error(500, err.stack));
+    //      .then(corsify)
+  }
+};
 
 /**
  * Respond to the request
  * @param {Request} request
- */ 
+ */
 async function getLog(request) {
   const params = new URLSearchParams(request.url.replace(/^[^\?]+\?/, ""));
 
