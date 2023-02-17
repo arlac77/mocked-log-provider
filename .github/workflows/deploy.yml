@@ -15,7 +15,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - uses: actions/setup-node@v3.6.0
         with:
-          node-version: 18.14.0
+          node-version: 18.14.1
           cache: npm
       - run: npm ci
       - run: npm run publish
