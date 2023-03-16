@@ -8,7 +8,7 @@ const router = Router();
 
 router
   .all("*", preflight)
-  .get("/version", () => json({ version: "0.3.0" }))
+  .get("/version", () => json({ version: "0.4.0" }))
   .get("/", getLog)
   .all("*", () => missing("Are you sure about that?"));
 
@@ -30,7 +30,7 @@ async function getLog(request) {
 
   let cursor = parseInt(params.get("cursor")) || 0;
   const offset = parseInt(params.get("offset")) || 0;
-  const number = parseInt(params.get("number")) || 10;
+  let number = parseInt(params.get("number")) || 10;
 
   const te = new TextEncoder();
 
@@ -40,7 +40,7 @@ async function getLog(request) {
 
   const iv = setInterval(() => {
     writer.write(te.encode(`line ${offset + cursor++}\n`));
-    if (cursor > number) {
+    if (number <= 0) {
       clearInterval(iv);
       writer.close();
     }
