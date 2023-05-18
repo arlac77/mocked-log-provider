@@ -2,7 +2,7 @@
   "name": "mocked-log-provider",
   "version": "0.0.0-semantic-release",
   "scripts": {
-    "publish": "wrangler publish",
+    "publish": "wrangler deploy",
     "start": "wrangler dev",
     "test": "npm run test:ava",
     "test:ava": "ava --timeout 2m tests/*-ava.mjs tests/*-ava-node.mjs",
@@ -21,7 +21,7 @@
     "c8": "^7.13.0",
     "documentation": "^14.0.1",
     "semantic-release": "^21.0.2",
-    "wrangler": "^2.20.0"
+    "wrangler": "^3.0.0"
   },
   "repository": {
     "type": "git",
