@@ -21,7 +21,7 @@
     "c8": "^8.0.1",
     "documentation": "^14.0.2",
     "semantic-release": "^21.0.7",
-    "wrangler": "^3.3.0"
+    "wrangler": "^3.4.0"
   },
   "repository": {
     "type": "git",
