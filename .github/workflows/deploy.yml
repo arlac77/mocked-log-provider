@@ -13,7 +13,7 @@ jobs:
         uses: cloudflare/wrangler-action@2.0.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
-      - uses: actions/setup-node@v3.8.1
+      - uses: actions/setup-node@v4
         with:
           node-version: 20.8.1
           cache: npm
