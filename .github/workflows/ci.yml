@@ -1,6 +1,4 @@
 name: CI
-'on':
-  push: null
 jobs:
   test-node:
     runs-on: ubuntu-latest
