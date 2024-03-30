@@ -20,8 +20,8 @@
     "ava": "^6.1.2",
     "c8": "^9.1.0",
     "documentation": "^14.0.3",
-    "semantic-release": "^23.0.2",
-    "wrangler": "^3.32.0"
+    "semantic-release": "^23.0.6",
+    "wrangler": "^3.39.0"
   },
   "repository": {
     "type": "git",
