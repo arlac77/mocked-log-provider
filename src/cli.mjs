@@ -6,5 +6,6 @@ const server = createServer((req, res) => {
   impl.fetch(req, res);
 });
 
+let port = "/run/mocked-log-provider/http/socket";
 
-server.listen(1337);
+server.listen(port);
