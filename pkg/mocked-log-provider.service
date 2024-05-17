@@ -5,9 +5,9 @@ Wants=network-online.target
 StopWhenUnneeded=true
 
 [Service]
-Type=notify
+Type=simple
 ExecStart=/usr/bin/node --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
-TimeoutStartSec=20
+TimeoutStartSec=10
 Restart=on-failure
 RestartSec=30s
 SystemCallErrorNumber=EPERM
@@ -24,8 +24,8 @@ ConfigurationDirectory={{name}}
 CPUWeight=30
 IOWeight=30
 MemoryAccounting=true
-MemoryHigh=60M
-MemoryMax=100M
+MemoryHigh=40M
+MemoryMax=50M
 OOMPolicy=stop
 FileDescriptorStoreMax=4
 ProtectKernelLogs=true
