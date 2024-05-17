@@ -6,3 +6,5 @@ doc
 *.log
 *.tmp
 .vscode
+pkg
+dist
