@@ -23,7 +23,7 @@
     "lint:docs": "documentation lint ./src/**/*.mjs"
   },
   "dependencies": {
-    "itty-cors": "^0.3.5",
+    "itty-cors": "^0.3.7",
     "itty-router": "^3.0.11",
     "itty-router-extras": "^0.4.2"
   },
