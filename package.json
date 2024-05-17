@@ -47,7 +47,18 @@
   },
   "homepage": "https://github.com/arlac77/mocked-log-provider#readme",
   "pkgbuild": {
-    "content": {}
+    "content": {
+      "${systemd.unit.dir}${name}.service": "pkg/${name}.service",
+      "${install.dir}": [
+        {
+          "type": "npm-pack"
+        },
+        {
+          "type": "node-modules"
+        }
+      ]
+    },
+    "example": true
   },
   "release": {
     "plugins": [
