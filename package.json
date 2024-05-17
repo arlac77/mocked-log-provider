@@ -1,7 +1,7 @@
 {
   "name": "mocked-log-provider",
   "version": "0.0.0-semantic-release",
-  "description": "ava openapi testing support",
+  "description": "log stream to test svelte logging",
   "scripts": {
     "publish": "wrangler deploy",
     "start": "wrangler dev",
