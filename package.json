@@ -34,6 +34,7 @@
     "ava": "^6.1.3",
     "c8": "^9.1.0",
     "documentation": "^14.0.3",
+    "mf-hosting": "^2.0.7",
     "npm-pkgbuild": "^15.3.14",
     "semantic-release": "^23.1.1",
     "wrangler": "^3.57.0"
@@ -49,6 +50,7 @@
   "pkgbuild": {
     "content": {
       "${systemd.unit.dir}${name}.service": "pkg/${name}.service",
+      "${tmpfiles.config.dir}${name}.conf": "pkg/tmpfiles.conf",
       "${install.dir}": [
         {
           "type": "npm-pack"
