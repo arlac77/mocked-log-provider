@@ -6,7 +6,7 @@ StopWhenUnneeded=true
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/node --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/{{name}}-cli.mjs start
+ExecStart=/usr/bin/node --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
 TimeoutStartSec=20
 Restart=on-failure
 RestartSec=30s
