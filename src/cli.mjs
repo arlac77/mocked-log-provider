@@ -34,7 +34,10 @@ try {
   const sd = await import("sd-daemon");
   sd.notify("STATUS=starting");
 
-  server.listen(systemdSocket(), error => {
+  const socket = systemdSocket();
+  console.log(socket);
+
+  server.listen(socket, error => {
     if (error) {
       sd.notify("READY=1\nERRNO=" + error);
     } else {
