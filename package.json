@@ -43,6 +43,12 @@
     "semantic-release": "^23.1.1",
     "wrangler": "^3.57.0"
   },
+  "engines": {
+    "node": ">=20.13.1"
+  },
+  "cpu": [
+    "arm64"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/arlac77/mocked-log-provider.git"
