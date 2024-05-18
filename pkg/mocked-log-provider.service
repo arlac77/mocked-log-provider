@@ -5,7 +5,7 @@ Wants=network-online.target
 StopWhenUnneeded=true
 
 [Service]
-Type=simple
+Type=notify
 ExecStart=/usr/bin/node --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
 TimeoutStartSec=10
 Restart=on-failure
