@@ -2,7 +2,7 @@
 Description={{description}}
 After=network-online.target
 Wants=network-online.target
-StopWhenUnneeded=true
+#StopWhenUnneeded=true
 
 [Service]
 Type=notify
@@ -23,9 +23,9 @@ StateDirectory={{name}}
 ConfigurationDirectory={{name}}
 CPUWeight=30
 IOWeight=30
-MemoryAccounting=true
-MemoryHigh=40M
-MemoryMax=50M
+#MemoryAccounting=true
+#MemoryHigh=40M
+#MemoryMax=50M
 OOMPolicy=stop
 FileDescriptorStoreMax=4
 ProtectKernelLogs=true
