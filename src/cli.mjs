@@ -1,5 +1,5 @@
 import impl from "./index.mjs";
-
+import { createServerAdapter } from '@whatwg-node/server';
 import { createServer } from "node:http";
 
 /* See SD_LISTEN_FDS_START from
@@ -22,24 +22,29 @@ function systemdSocket(index) {
   }
 }
 
-const server = createServer((req, res) => {
-  impl.fetch(req, res);
-});
+const ittyServer = createServerAdapter(impl.fetch);
+const server = createServer(ittyServer);
+
+let sd = { notify: (...argv) => console.log(...argv) };
 
 try {
-  const sd = await import("sd-daemon");
+  sd = await import("sd-daemon");
   sd.notify("STATUS=starting");
-
-  const socket = systemdSocket() || 8888;
-  console.log(socket);
-
-  server.listen(socket, error => {
-    if (error) {
-      sd.notify("READY=1\nERRNO=" + error);
-    } else {
-      sd.notify("READY=1\nSTATUS=running");
-    }
-  });
 } catch (e) {
-  console.error(e);
+  if (e.code === "ERR_MODULE_NOT_FOUND") {
+  } else {
+    console.error(e);
+    process.exit(-1);
+  }
 }
+
+const socket = systemdSocket() || 8888;
+
+server.listen(socket, error => {
+  if (error) {
+    sd.notify("READY=1\nERRNO=" + error);
+  } else {
+    console.log(socket);
+    sd.notify("READY=1\nSTATUS=running");
+  }
+});
