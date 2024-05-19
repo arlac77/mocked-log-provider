@@ -28,9 +28,6 @@
     "itty-router": "^5.0.17",
     "itty-router-extras": "^0.4.6"
   },
-  "optionalDependencies": {
-    "sd-daemon": "^2.0.1"
-  },
   "devDependencies": {
     "@semantic-release/commit-analyzer": "^12.0.0",
     "@semantic-release/exec": "^6.0.3",
@@ -43,6 +40,9 @@
     "npm-pkgbuild": "^15.3.14",
     "semantic-release": "^23.1.1",
     "wrangler": "^3.57.0"
+  },
+  "optionalDependencies": {
+    "sd-daemon": "^2.0.1"
   },
   "engines": {
     "node": ">=20.13.1"
