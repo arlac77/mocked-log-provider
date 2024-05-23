@@ -15,7 +15,7 @@ test("response ok", async t => {
     }
   });
 
-  const response = await fetch(`http://localhost:${socket}/`);
+  const response = await fetch(`http://localhost:${socket}/?delay=1&number=2`);
 
   t.true(response.ok);
 
