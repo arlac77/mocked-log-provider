@@ -1,5 +1,5 @@
 name = "mocked-log-provider"
 main = "src/index.mjs"
 workers_dev = true
-compatibility_date = "2023-01-15"
+compatibility_date = "2024-04-29"
 account_id = "e881ef579422d5891a1045e5eb1964c6"
