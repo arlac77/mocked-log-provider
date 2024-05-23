@@ -5,9 +5,12 @@
 export async function getLog(request) {
   const params = new URLSearchParams(request.url.replace(/^[^\?]+\?/, ""));
 
-  let cursor = parseInt(params.get("cursor")) || 0;
-  const offset = parseInt(params.get("offset")) || 0;
-  let number = parseInt(params.get("number")) || 10;
+  let value = params.get("cursor");
+  let cursor = value && parseInt(value) || 0;
+  value = params.get("offset");
+  const offset = value && parseInt(value) || 0;
+  value = params.get("number");
+  let number = value && parseInt(value) || 10;
 
   const te = new TextEncoder();
 
