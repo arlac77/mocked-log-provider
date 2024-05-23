@@ -11,6 +11,8 @@ export async function getLog(request) {
   const offset = value && parseInt(value) || 0;
   value = params.get("number");
   let number = value && parseInt(value) || 10;
+  value = params.get("delay");
+  let delay = value && parseInt(value) || 300;
 
   const te = new TextEncoder();
 
@@ -18,13 +20,14 @@ export async function getLog(request) {
 
   const writer = writable.getWriter();
 
-  const iv = setInterval(() => {
+  const iv = setInterval(async () => {
     writer.write(te.encode(`line ${offset + cursor++}\n`));
     if (number-- <= 0) {
       clearInterval(iv);
-      writer.close();
+      await writer.ready;
+      await writer.close();
     }
-  }, 300);
+  }, delay);
 
   return new Response(readable /*, { status: 200 }*/);
 }
