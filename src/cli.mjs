@@ -1,9 +1,8 @@
 #!/usr/bin/env -S node --no-warnings --title mocked-log-provider
 
-import impl from "./index.mjs";
 import { createServerAdapter } from '@whatwg-node/server';
-
 import { createServer } from "node:http";
+import { router } from "./router.mjs";
 
 /* See SD_LISTEN_FDS_START from
  * http://cgit.freedesktop.org/systemd/systemd/tree/src/systemd/sd-daemon.h */
@@ -25,7 +24,7 @@ function systemdSocket(index) {
   }
 }
 
-const ittyServer = createServerAdapter(impl.fetch);
+const ittyServer = createServerAdapter(router.fetch);
 const httpServer = createServer(ittyServer);
 
 let sd = { notify: (...argv) => console.log(...argv) };
