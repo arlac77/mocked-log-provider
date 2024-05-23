@@ -1,5 +1,8 @@
+#!/usr/bin/env -S node --no-warnings --title mocked-log-provider
+
 import impl from "./index.mjs";
 import { createServerAdapter } from '@whatwg-node/server';
+
 import { createServer } from "node:http";
 
 /* See SD_LISTEN_FDS_START from
@@ -23,7 +26,7 @@ function systemdSocket(index) {
 }
 
 const ittyServer = createServerAdapter(impl.fetch);
-const server = createServer(ittyServer);
+const httpServer = createServer(ittyServer);
 
 let sd = { notify: (...argv) => console.log(...argv) };
 
@@ -40,7 +43,7 @@ try {
 
 const socket = systemdSocket() || 8888;
 
-server.listen(socket, error => {
+httpServer.listen(socket, error => {
   if (error) {
     sd.notify("READY=1\nERRNO=" + error);
   } else {
