@@ -39,7 +39,7 @@
     "mf-hosting": "^2.1.2",
     "npm-pkgbuild": "^15.3.21",
     "semantic-release": "^24.0.0",
-    "wrangler": "^3.58.0"
+    "wrangler": "^3.59.0"
   },
   "optionalDependencies": {
     "sd-daemon": "^2.0.1"
