@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4.1.7
       - name: Publish
-        uses: cloudflare/wrangler-action@v3.6.1
+        uses: cloudflare/wrangler-action@v3.7.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - uses: actions/setup-node@v4.0.2
