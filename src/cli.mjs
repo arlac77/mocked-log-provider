@@ -46,7 +46,6 @@ httpServer.listen(socket, error => {
   if (error) {
     sd.notify("READY=1\nERRNO=" + error);
   } else {
-    console.log(socket);
     sd.notify("READY=1\nSTATUS=running");
   }
 });
