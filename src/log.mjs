@@ -4,15 +4,17 @@
  */
 export async function getLog(request) {
   const params = new URLSearchParams(request.url.replace(/^[^\?]+\?/, ""));
+  const param = (attribute, d = 0) => {
+    const value = params.get(attribute);
+    return (value !== null && parseInt(value)) || d;
+  };
 
-  let value = params.get("cursor");
-  let cursor = value && parseInt(value) || 0;
-  value = params.get("offset");
-  const offset = value && parseInt(value) || 0;
-  value = params.get("number");
-  let number = value && parseInt(value) || 10;
-  value = params.get("delay");
-  let delay = value && parseInt(value) || 300;
+  let cursor = param("cursor", 0);
+  const offset = param("offset", 0);
+  let number = param("number", 10);
+  let delay = param("delay", 300);
+
+  //console.log(cursor,offset,number,delay);
 
   const te = new TextEncoder();
 
