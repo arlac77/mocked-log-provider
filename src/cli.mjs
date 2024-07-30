@@ -27,7 +27,7 @@ function systemdSocket(index) {
 const ittyServer = createServerAdapter(router.fetch);
 const httpServer = createServer(ittyServer);
 
-let sd = { notify: (...argv) => console.log(...argv) };
+let sd = { notify: (...argv) => {} };
 
 try {
   sd = await import("sd-daemon");
