@@ -74,7 +74,7 @@
       ]
     },
     "example": true,
-    "nginx.location.trailer": "  proxy_request_buffering off;"
+    "nginx.location.trailer": "  proxy_request_buffering off;\n  access_log off;\n"
   },
   "release": {
     "plugins": [
