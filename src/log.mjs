@@ -31,5 +31,8 @@ export async function getLog(request) {
     }
   }, delay);
 
-  return new Response(readable /*, { status: 200 }*/);
+  return new Response(readable, {
+    headers: { "Content-Type": "text/plain" },
+    status: 200
+  });
 }
