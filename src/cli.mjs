@@ -33,8 +33,7 @@ try {
   sd = await import("sd-daemon");
   sd.notify("STATUS=starting");
 } catch (e) {
-  if (e.code === "ERR_MODULE_NOT_FOUND") {
-  } else {
+  if (e.code !== "ERR_MODULE_NOT_FOUND") {
     console.error(e);
     process.exit(-1);
   }
