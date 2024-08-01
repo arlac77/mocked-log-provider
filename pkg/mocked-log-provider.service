@@ -6,7 +6,7 @@ StopWhenUnneeded=false
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/node --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
+ExecStart=/usr/bin/node --experimental-json-modules --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
 TimeoutStartSec=10
 Restart=on-failure
 RestartSec=30s
@@ -25,7 +25,7 @@ CPUWeight=10
 IOWeight=10
 #MemoryAccounting=true
 MemoryHigh=25M
-MemoryMax=45M
+MemoryMax=40M
 OOMPolicy=stop
 FileDescriptorStoreMax=2
 ProtectKernelLogs=true

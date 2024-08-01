@@ -1,4 +1,4 @@
-#!/usr/bin/env -S node --no-warnings --title mocked-log-provider
+#!/usr/bin/env -S node --experimental-json-modules --no-warnings --title mocked-log-provider
 
 import { createServerAdapter } from '@whatwg-node/server';
 import { createServer } from "node:http";
