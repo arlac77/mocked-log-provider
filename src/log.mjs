@@ -12,12 +12,28 @@ export async function getLog(request) {
   let cursor = param("cursor", 0);
   const offset = param("offset", 0);
   let number = param("number", 10);
-  let delay = param("delay", 300);
+  let delay = param("delay", 200);
 
   //console.log(cursor,offset,number,delay);
 
   const te = new TextEncoder();
 
+  /*
+  const readableStream = new ReadableStream({
+    async pull(controller) {
+      const iv = setInterval(async () => {
+        if (number-- <= 0) {
+          clearInterval(iv);
+          controller.close();
+        } else {
+          controller.enqueue(te.encode(`line ${offset + cursor++}\n`));
+        }  
+      }, delay);
+    }
+  });
+
+  const readable = readableStream.getReader();
+  */
   const { readable, writable } = new TransformStream();
 
   const writer = writable.getWriter();
