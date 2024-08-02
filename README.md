@@ -8,4 +8,7 @@
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![Known Vulnerabilities](https://snyk.io/test/github/arlac77/mocked-log-provider/badge.svg)](https://snyk.io/test/github/arlac77/mocked-log-provider)
 [![Coverage Status](https://coveralls.io/repos/arlac77/mocked-log-provider/badge.svg)](https://coveralls.io/github/arlac77/mocked-log-provider)
+
 # mocked-log-provider
+
+log stream to test svelte logging
