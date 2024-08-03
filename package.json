@@ -20,7 +20,8 @@
     "cover": "c8 -x 'tests/**/*' --temp-directory build/tmp ava --timeout 4m tests/*-ava.mjs tests/*-ava-node.mjs && c8 report -r lcov -o build/coverage --temp-directory build/tmp",
     "docs": "documentation readme --section=API ./src/**/*.mjs",
     "lint": "npm run lint:docs",
-    "lint:docs": "documentation lint ./src/**/*.mjs"
+    "lint:docs": "documentation lint ./src/**/*.mjs",
+    "wrangler:publish": "wrangler deploy"
   },
   "dependencies": {
     "@whatwg-node/server": "^0.9.46",
@@ -37,7 +38,7 @@
     "c8": "^10.1.2",
     "documentation": "^14.0.3",
     "mf-hosting": "^2.3.0",
-    "npm-pkgbuild": "^15.3.28",
+    "npm-pkgbuild": "^15.3.29",
     "semantic-release": "^24.0.0",
     "wrangler": "^3.68.0"
   },
