@@ -11,6 +11,6 @@ const router = AutoRouter();
 router
   .all("*", preflight)
   .get("/status", () => json({ linesDelivered, version: pkg.version }))
-  .get("/", getLog);
+  .get("*", getLog);
 
 export { router, corsify };
