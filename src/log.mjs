@@ -22,10 +22,18 @@ export async function getLog(request) {
     const writer = writable.getWriter();
 
     const iv = setInterval(async () => {
-      writer.write(te.encode(`line ${offset + cursor++}\n`));
-      if (number-- <= 0) {
+      try {
+        await writer.write(te.encode(`line ${offset + cursor++}\n`));
+
+        linesDelivered++;
+
+        if (number-- <= 0) {
+          clearInterval(iv);
+          await writer.close();
+        }
+      } catch (e) {
+        console.error(e);
         clearInterval(iv);
-        await writer.close();
       }
     }, delay);
 
@@ -41,3 +49,5 @@ export async function getLog(request) {
     });
   }
 }
+
+export let linesDelivered = 0;
