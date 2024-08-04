@@ -4,6 +4,9 @@ import { createServerAdapter } from '@whatwg-node/server';
 import { createServer } from "node:http";
 import { router } from "./router.mjs";
 
+process.on("uncaughtException", console.error);
+process.on("unhandledRejection", console.error);
+
 /* See SD_LISTEN_FDS_START from
  * http://cgit.freedesktop.org/systemd/systemd/tree/src/systemd/sd-daemon.h */
 const SD_LISTEN_FDS_START = 3;
