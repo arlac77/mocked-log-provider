@@ -10,10 +10,10 @@ export async function getLog(request) {
       return (value !== null && parseInt(value)) || d;
     };
 
-    let cursor = param("cursor", 0);
+    const delay = param("delay", 200);
     const offset = param("offset", 0);
+    let cursor = param("cursor", 0);
     let number = param("number", 10);
-    let delay = param("delay", 200);
 
     const te = new TextEncoder();
 
