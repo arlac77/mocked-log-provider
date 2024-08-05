@@ -23,12 +23,14 @@ export async function getLog(request) {
 
     const iv = setInterval(async () => {
       try {
+        await writer.ready;
         await writer.write(te.encode(`line ${offset + cursor++}\n`));
 
         linesDelivered++;
 
         if (number-- <= 0) {
           clearInterval(iv);
+          await writer.ready;
           await writer.close();
         }
       } catch (e) {
