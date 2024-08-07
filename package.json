@@ -75,7 +75,7 @@
       ]
     },
     "example": true,
-    "nginx.location.trailer": "  proxy_request_buffering off;\n  access_log off;\n",
+    "nginx.location.trailer": "  proxy_buffering off;\n  proxy_request_buffering off;\n  access_log off;\n",
     "cache-control.header": "public,no-store,no-cache"
   },
   "release": {
