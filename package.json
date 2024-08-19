@@ -26,7 +26,7 @@
   "dependencies": {
     "@whatwg-node/server": "^0.9.47",
     "itty-cors": "^0.3.7",
-    "itty-router": "^5.0.17",
+    "itty-router": "^5.0.18",
     "itty-router-extras": "^0.4.6"
   },
   "devDependencies": {
