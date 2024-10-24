@@ -11,14 +11,14 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4.2.2
       - name: prepare node
-        uses: actions/setup-node@v4.0.4
+        uses: actions/setup-node@v4.1.0
         with:
           node-version: 22.10.0
           cache: npm
       - name: install
         run: npm ci
       - name: publish wrangler
-        uses: cloudflare/wrangler-action@v3.9.0
+        uses: cloudflare/wrangler-action@v3.10.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: publish
