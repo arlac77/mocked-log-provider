@@ -11,7 +11,7 @@
       "email": "markus.felten@gmx.de"
     }
   ],
-  "license": "BSD-2-Clause",
+  "license": "0BSD",
   "scripts": {
     "publish:wrangler": "wrangler deploy",
     "start": "wrangler dev",
@@ -40,7 +40,7 @@
     "mf-hosting": "^2.8.6",
     "npm-pkgbuild": "^15.6.11",
     "semantic-release": "^24.2.0",
-    "wrangler": "^3.97.0"
+    "wrangler": "^3.98.0"
   },
   "optionalDependencies": {
     "sd-daemon": "^2.0.1"
