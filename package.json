@@ -46,7 +46,7 @@
     "sd-daemon": "^2.0.1"
   },
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=22.14.0"
   },
   "cpu": [
     "arm64",
@@ -65,14 +65,12 @@
       "${systemd.unit.dir}${name}.service": "pkg/${name}.service",
       "${tmpfiles.config.dir}${name}.conf": "pkg/tmpfiles.conf",
       "${sysusers.config.dir}${name}.conf": "pkg/sysusers.conf",
-      "${install.dir}": [
-        {
-          "type": "npm-pack"
-        },
-        {
-          "type": "node-modules"
-        }
-      ]
+      "${install.dir}": {
+        "type": "npm-pack"
+      },
+      "${install.dir}/node_modules": {
+        "type": "node-modules"
+      }
     },
     "example": true,
     "nginx.location.trailer": "  proxy_buffering off;\n  proxy_request_buffering off;\n  access_log off;\n",
