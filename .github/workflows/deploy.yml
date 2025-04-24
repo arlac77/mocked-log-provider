@@ -13,12 +13,12 @@ jobs:
       - name: prepare node
         uses: actions/setup-node@v4.4.0
         with:
-          node-version: 22.14.0
+          node-version: 22.15.0
           cache: npm
       - name: install
         run: npm ci
       - name: publish wrangler
-        uses: cloudflare/wrangler-action@v3.14.1
+        uses: cloudflare/wrangler-action@v3.13.0
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
       - name: publish
