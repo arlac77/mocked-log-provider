@@ -25,7 +25,7 @@
     "wrangler:publish": "wrangler deploy"
   },
   "dependencies": {
-    "@whatwg-node/server": "^0.10.12",
+    "@whatwg-node/server": "^0.10.15",
     "itty-cors": "^0.3.7",
     "itty-router": "^5.0.22",
     "itty-router-extras": "^0.4.6"
