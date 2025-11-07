@@ -40,7 +40,7 @@
     "documentation": "^14.0.3",
     "mf-hosting": "^2.9.1",
     "npm-pkgbuild": "^19.0.1",
-    "semantic-release": "^25.0.1",
+    "semantic-release": "^25.0.2",
     "wrangler": "^4.46.0"
   },
   "optionalDependencies": {
