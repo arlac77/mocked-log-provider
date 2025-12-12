@@ -50,8 +50,7 @@
     "node": ">=24.11.0"
   },
   "cpu": [
-    "arm64",
-    "x64"
+    "arm64"
   ],
   "repository": {
     "type": "git",
