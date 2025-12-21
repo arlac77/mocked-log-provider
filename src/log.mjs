@@ -11,9 +11,9 @@ export async function getLog(request) {
     };
 
     const delay = param("delay", 200);
-    const offset = param("offset", 0);
+    const offset = Math.max(param("offset", 0), -1000);
     let cursor = param("cursor", 0);
-    let number = param("number", 10);
+    let number = Math.min(param("number", 10), 1000);
 
     const te = new TextEncoder();
 
