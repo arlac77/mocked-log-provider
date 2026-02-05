@@ -6,14 +6,14 @@ StopWhenUnneeded=false
 
 [Service]
 Type=notify
-ExecStart=/usr/bin/node --experimental-json-modules --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install.dir}}src/cli.mjs
+ExecStart=/usr/bin/node --experimental-json-modules --unhandled-rejections=strict --trace-uncaught --trace-warnings --title {{name}} {{install_dir}}src/cli.mjs
 TimeoutStartSec=10
 Restart=on-failure
 RestartSec=30s
 SystemCallErrorNumber=EPERM
 DynamicUser=no
-User={{os.user}}
-Group={{os.group}}
+User={{os_user}}
+Group={{os_group}}
 UMask=0077
 NoNewPrivileges=true
 RuntimeDirectory={{name}}

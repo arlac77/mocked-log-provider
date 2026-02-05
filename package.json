@@ -47,7 +47,7 @@
     "sd-daemon": "^2.0.1"
   },
   "engines": {
-    "node": ">=24.12.0"
+    "node": ">=24.13.0"
   },
   "cpu": [
     "arm64",
@@ -63,19 +63,19 @@
   "homepage": "https://github.com/arlac77/mocked-log-provider#readme",
   "pkgbuild": {
     "content": {
-      "${systemd.unit.dir}${name}.service": "pkg/${name}.service",
-      "${tmpfiles.config.dir}${name}.conf": "pkg/tmpfiles.conf",
-      "${sysusers.config.dir}${name}.conf": "pkg/sysusers.conf",
-      "${install.dir}": {
+      "${systemd_unit_dir}${name}.service": "pkg/${name}.service",
+      "${tmpfiles_config_dir}${name}.conf": "pkg/tmpfiles.conf",
+      "${sysusers_config_dir}${name}.conf": "pkg/sysusers.conf",
+      "${install_dir}": {
         "type": "npm-pack"
       },
-      "${install.dir}/node_modules": {
+      "${install_dir}/node_modules": {
         "type": "node-modules"
       }
     },
     "example": true,
-    "nginx.location.trailer": "  proxy_buffering off;\n  proxy_request_buffering off;\n  access_log off;\n",
-    "cache-control.header": "public,no-store,no-cache"
+    "nginx_location_trailer": "  proxy_buffering off;\n  proxy_request_buffering off;\n  access_log off;\n",
+    "cache_control_header": "public,no-store,no-cache"
   },
   "release": {
     "plugins": [
