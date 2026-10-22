@@ -39,9 +39,9 @@
     "c8": "^12.0.0",
     "documentation": "^14.0.3",
     "mf-hosting": "^3.1.6",
-    "npm-pkgbuild": "^22.2.23",
+    "npm-pkgbuild": "^22.3.0",
     "semantic-release": "^25.0.9",
-    "wrangler": "^4.151.0"
+    "wrangler": "^4.151.3"
   },
   "optionalDependencies": {
     "sd-daemon": "^2.0.1"
