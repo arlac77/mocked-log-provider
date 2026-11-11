@@ -4,7 +4,7 @@
   "publishConfig": {
     "access": "public"
   },
-  "packageManager": "npm@11.18.0",
+  "packageManager": "npm@11.20.0",
   "description": "log stream to test svelte logging",
   "contributors": [
     {
@@ -41,7 +41,7 @@
     "mf-hosting": "^3.1.6",
     "npm-pkgbuild": "^22.3.5",
     "semantic-release": "^25.0.9",
-    "wrangler": "^4.158.0"
+    "wrangler": "^4.160.0"
   },
   "optionalDependencies": {
     "sd-daemon": "^2.0.1"
